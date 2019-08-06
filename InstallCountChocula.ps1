@@ -2,8 +2,6 @@
 Set-ExecutionPolicy Bypass -Scope Process -Force
 Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
-
 #Assign Packages to Install
 $Packages = 'googlechrome',`
             'vscode',`
@@ -17,4 +15,4 @@ ForEach ($PackageName in $Packages)
 {choco install $PackageName -y}
 
 #Reboot
-Restart-Computer
+Restart-Computer -Force
