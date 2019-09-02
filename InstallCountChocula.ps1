@@ -15,4 +15,5 @@ ForEach ($PackageName in $Packages)
 {choco install $PackageName -y}
 
 #Reboot
+Add-LocalGroupMember -Group "Docker-users" -Member "dbgAdmin"
 Restart-Computer
