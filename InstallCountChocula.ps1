@@ -5,6 +5,7 @@ Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://cho
 #Assign Packages to Install
 $Packages = 'googlechrome',`
             'vscode',`
+            'commandbox',`
             'git.install',`
             'vscode-docker',`
             'conemu',`
