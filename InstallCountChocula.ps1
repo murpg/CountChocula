@@ -6,6 +6,7 @@ Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://cho
 $Packages = 'googlechrome',`
             'vscode',`
             'commandbox',`
+            'jdk8',`
             'git.install',`
             'vscode-docker',`
             'conemu',`
