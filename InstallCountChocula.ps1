@@ -5,17 +5,16 @@ Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://cho
 #Assign Packages to Install
 $Packages = 'googlechrome',`
             'vscode',`
-            'commandbox',`
             'jdk8',`
+            'commandbox',`
             'git.install',`
             'vscode-docker',`
-            'conemu',`
-            'docker-desktop'
+            'conemu'`
 
 #Install Packages
 ForEach ($PackageName in $Packages)
 {choco install $PackageName -y}
 
 #Reboot
-Add-LocalGroupMember -Group "Docker-users" -Member "dbgAdmin"
+
 Restart-Computer -Force
