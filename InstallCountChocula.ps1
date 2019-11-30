@@ -9,7 +9,7 @@ $Packages = 'googlechrome',`
             'commandbox',`
             'git.install',`
             'vscode-docker',`
-            'conemu'`
+            'conemu --version=16.12.6.0'`
 
 #Install Packages
 ForEach ($PackageName in $Packages)
