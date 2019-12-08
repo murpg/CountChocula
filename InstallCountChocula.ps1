@@ -20,6 +20,6 @@ New-Item C:\inetpub\wwwroot\websites\pmses -ItemType Directory;
 New-WebSite -Name pmses -Port 80 -HostHeader pmses.devmilnet.com -PhysicalPath "$env:systemdrive\inetpub\wwwroot\websites\pmses";
 choco install urlrewrite -y;
 choco install iis-arr -y;
-choco install msdeploy -y;
+choco install webpi -y;
 choco install conemu --version=16.12.6.0 -y;
 Restart-Computer -Force
