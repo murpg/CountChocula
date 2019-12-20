@@ -9,13 +9,11 @@ $Packages = 'googlechrome',`
             'jdk8',`
             'git.install',`
             'vscode-docker',`
-            'conemu',`
-            'docker-desktop'
+            'conemu'
 
 #Install Packages
 ForEach ($PackageName in $Packages)
 {choco install $PackageName -y}
 
-#Reboot
-Add-LocalGroupMember -Group "Docker-users" -Member "dbgAdmin"
+#Reboot 
 Restart-Computer -Force
