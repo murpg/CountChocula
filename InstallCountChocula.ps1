@@ -7,7 +7,8 @@ $Packages = 'googlechrome',`
             'vscode',`
             'jdk8',`
             'commandbox',`
-            'git.install'
+            'git.install',`
+            'bitvise-ssh-server'
 
 #Install Packages
 ForEach ($PackageName in $Packages)
