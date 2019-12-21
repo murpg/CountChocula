@@ -17,11 +17,11 @@ ForEach ($PackageName in $Packages)
 Add-WindowsFeature Web-Asp-Net45; Add-WindowsFeature NET-Framework-45-Core; Add-WindowsFeature Web-Net-Ext45; Add-WindowsFeature NET-WCF-Services45;Add-WindowsFeature NET-WCF-HTTP-Activation45;Add-WindowsFeature NET-WCF-MSMQ-Activation45;Add-WindowsFeature NET-WCF-Pipe-Activation45;Add-WindowsFeature NET-WCF-TCP-Activation45; Add-WindowsFeature Web-ISAPI-Ext; Add-WindowsFeature Web-ISAPI-Filter; Add-WindowsFeature Web-CGI; Add-WindowsFeature Web-Mgmt-Console; Add-WindowsFeature Web-Mgmt-Compat,Web-Lgcy-Mgmt-Console; Add-WindowsFeature Web-Scripting-Tools; Add-WindowsFeature Search-Service; Add-WindowsFeature Web-Filtering; Add-WindowsFeature Web-Basic-Auth; Add-WindowsFeature Web-Default-Doc; Add-WindowsFeature Web-Http-Errors; Add-WindowsFeature Web-Static-Content;
 Import-Module WebAdministration;
 Get-Website | Remove-Website;
-New-Item C:\inetpub\wwwroot\websites\pmses -ItemType Directory;
+New-Item C:\inetpub\wwwroot\websites\pms-es -ItemType Directory;
 New-WebSite -Name pms-es -Port 80 -HostHeader pmses.devmilnet.com -PhysicalPath "$env:systemdrive\inetpub\wwwroot\websites\pms-es";
 Get-WebBinding;
-(Get-Website -Name 'pmses').bindings.Collection;
-New-WebBinding -Name 'pmses' -IPAddress * -Port 443 -Protocol https;
+(Get-Website -Name 'pms-es').bindings.Collection;
+New-WebBinding -Name 'pms-es' -IPAddress * -Port 443 -Protocol https;
 $cert = New-SelfSignedCertificate -CertStoreLocation 'Cert:\LocalMachine\My' -DnsName 'pmses.devmilnet.com';
 $certPath = "Cert:\LocalMachine\My\$($cert.Thumbprint)";
 $providerPath = 'IIS:\SSLBindings\0.0.0.0!443';
