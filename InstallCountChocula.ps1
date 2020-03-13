@@ -10,6 +10,7 @@ $Packages = 'googlechrome',`
             'jdk8',`
             'git.install',`
             'vscode-docker',`
+            'zoom',`
             'conemu'
 
 #Install Packages
