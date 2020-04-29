@@ -6,6 +6,7 @@ Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://cho
 $Packages = 'googlechrome',`
             'vscode',`
             'jdk8',`
+            'certifytheweb',`
             'git.install'
 
 #Install Packages
@@ -22,5 +23,13 @@ Import-Module WebAdministration;
 choco install urlrewrite -y;
 choco install iis-arr -y;
 choco install webpi -y;
+choco install commandbox -y;
 choco install conemu --version=16.12.6.0 -y;
-Restart-Computer -Force
+
+# Install Windows Update Module (only needed once). You'll be prompted to approve the untrusted repository
+Install-Module PSWindowsUpdate 
+
+# Get and install Windows Updates. To get or install individual updates, use parameter -KBArticleID (e.g. 'Install-WindowsUpdate -KBArticleID KB1234567')
+Get-WindowsUpdate
+Install-WindowsUpdate -AcceptAll -AutoReboot
+
