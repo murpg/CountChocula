@@ -1,6 +1,11 @@
-#Install Chocolatey
-Set-ExecutionPolicy Bypass -Scope Process -Force
-Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+
+#Install Software
+choco install microsoft-edge -y
+choco install obs-studio -y
+choco install obs-ndi -y
+choco install skype -y
+
 
 #Assign Packages to Install
 $Packages = 'googlechrome',`
