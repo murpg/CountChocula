@@ -9,7 +9,7 @@ choco install skype -y
 
 #Assign Packages to Install
 $Packages = 'googlechrome',`
-            'vscode',`
+            'vscode --version=1.36.1',`
             'jdk8',`
             'certifytheweb',`
             'git.install'
