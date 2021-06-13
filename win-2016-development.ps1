@@ -27,4 +27,15 @@ choco install urlrewrite -y;
 choco install iis-arr -y;
 choco install webpi -y;
 choco install cmder -y;
+
+$WshShell = New-Object -comObject WScript.Shell
+$Shortcut = $WshShell.CreateShortcut("C:\Users\dbgAdmin\Desktop\Cmder.lnk")
+$Shortcut.TargetPath = "C:\tools\Cmder\Cmder.exe"
+$Shortcut.Save()
+
+cd "C:\tools\Cmder\bin"
+Invoke-WebRequest -Uri "https://s3.amazonaws.com/downloads.ortussolutions.com/ortussolutions/commandbox/5.4.0-alpha/commandbox-jre-win64-5.4.0-alpha.zip" -OutFile "commandbox-jre-win64-5.4.0-alpha.zip";
+Expand-Archive -Path "C:\tools\Cmder\bin\commandbox-jre-win64-5.4.0-alpha.zip" -DestinationPath "C:\tools\Cmder\bin";
+Remove-Item -Path "C:\tools\Cmder\bin\commandbox-jre-win64-5.4.0-alpha.zip" -Force;
+
 Restart-Computer -Force
